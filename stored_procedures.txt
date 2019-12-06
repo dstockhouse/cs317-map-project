@@ -1,0 +1,82 @@
+//Procedure to get the classes in a building
+
+DELIMITER //
+CREATE PROCEDURE GetClassList(
+	building_num VARCHAR(100))
+BEGIN
+    Select 
+	class_name,
+	class_time,
+	class_room 
+	FROM 
+	classes
+	WHERE
+	class_time = CURDATE () AND building_id = building_num
+END //
+ 
+DELIMITER ;
+
+
+//Procedure to get the events in a building sorted by time and date
+
+DELIMITER //
+CREATE PROCEDURE GetClassList(
+	building_num VARCHAR(100))
+BEGIN
+	Select 
+	event_name,
+	event_time,
+	event_room
+	FROM 
+	events 
+	WHERE 
+	building_id = building_num
+	ORDER BY
+	event_time
+END //
+ 
+DELIMITER ;
+
+
+//Search for class by name
+
+DELIMITER //
+CREATE PROCEDURE GetClassList(
+	class VARCHAR(100))
+BEGIN
+    Select 
+	class_name,
+	class_time,
+	class_room, 
+	building_id
+	FROM 
+	classes
+	WHERE 
+	class_name = class
+END //
+ 
+DELIMITER ;
+
+//Search for event by name
+
+DELIMITER //
+CREATE PROCEDURE GetClassList(
+	event VARCHAR(100))
+BEGIN
+    Select 
+    event_name,
+	event_time,
+	event_room 
+	building_id
+	FROM 
+	events
+	WHERE 
+	event_name = event
+END //
+ 
+DELIMITER ;
+
+
+
+
+
