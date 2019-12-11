@@ -1,10 +1,13 @@
 CREATE TABLE buildings(
 	building_id VARCHAR(100),
-	building_name VARCHAR(100));
+	building_name VARCHAR(100),
+	coordinates   POINT,
+	building_descrip LONGTEXT);
 	
 CREATE TABLE classes(
 	class_name VARCHAR(100),
-	class_time DATETIME,
+	class_day CHAR(1),
+	class_time TIME, 
 	class_room VARCHAR(100),
 	building_id VARCHAR(100));
 
@@ -12,4 +15,10 @@ CREATE TABLE events(
 	event_name VARCHAR(100),
 	event_time DATETIME,
 	event_room VARCHAR(100),
+	building_id VARCHAR(100));
+
+CREATE TABLE rooms(
+	room_id VARCHAR(1000),
+	room_name VARCHAR(100),
+	capacity VARCHAR(100),
 	building_id VARCHAR(100));
