@@ -11,9 +11,8 @@ BEGIN
 	FROM 
 	classes
 	WHERE
-	class_time = CURDATE () AND building_id = building_num
-END //
- 
+	class_day = DAYOFWEEK(CURDATE()) AND building_id = building_num;
+END // 
 DELIMITER ;
 
 
